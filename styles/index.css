@@ -47,6 +47,10 @@ header {
   padding: 1rem;
 }
 
+.logo {
+  font-size: 1.25rem;
+}
+
 header ul {
   display: flex;
   align-items: center;
