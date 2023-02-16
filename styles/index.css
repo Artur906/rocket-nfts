@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* GLOBAL STYLING */
+:root {
+  --main-bg-color: #0E0E0E;
+  --secondary-bg-color: #252525;
+  --main-text-color: #FFFFFF;
+  --strong-text-color: #FF5B50;
+  
+  --font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--main-text-color);
+  /* order of properties for shorthand for background shorthand: 
+    background-color
+    background-image
+    background-repeat
+    background-attachment
+    background-position
+  */
+  background: 
+    var(--main-bg-color) 
+    url('../assets/images/background-top-section.png') 
+    no-repeat 
+    scroll 
+    top center
+  ;
+  background-size: cover; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+strong {
+  color: var(--strong-text-color);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+}
+
+header li a {
+  padding: 2rem;
+  color: var(--main-text-color);
+}
+
+header a:hover {
+  color: var(--strong-text-color);
+}
+
+header button {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1rem;
+
+  font-weight: bold;
+  font-family: var(--font-family);
+
+  cursor: pointer;
+}
