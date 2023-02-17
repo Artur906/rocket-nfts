@@ -1,1 +1,6 @@
-# UPSSSSS depois eu faço uma descrição beeem bonita
+# ROCKET - NFTS
+
+Opa, o Rocket - NFTS é um desafio da rocketseat, eu peguei ele pra praticar um pouco o HTML e CSS, esse projeto foi desenvolvido usando apenas essas ferramentas... 
+
+Da uma olhada em como ficou!! <br>
+![](./public/demonstrating-project.gif)

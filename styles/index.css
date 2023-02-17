@@ -405,6 +405,8 @@ footer main {
   border: none;
   width: 280px;
   font-size: 1.25rem;
+  color: var(--main-text-color);
+  outline: none;
 }
 
 .footer_main form button{
