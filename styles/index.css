@@ -30,6 +30,7 @@ body {
   ;
   background-size: cover; 
   font-size: 1.125rem;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -143,9 +144,9 @@ section .selected_artists {
   background-color: transparent;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
   justify-content: center;
-
+  
+  gap: 1.25rem;
   margin-top: 100px;
 }
 
@@ -190,10 +191,9 @@ section .selected_artists {
   padding-block: 70px;
   padding-left: 68px;
   gap: 126px;
-  
 }
 
-.third_section main .content :not(a[target='_blank']) {
+.third_section main .content a:not(a[target='_blank']) {
   margin-top: 64px;
   display: block;
 }
@@ -208,4 +208,68 @@ section .selected_artists {
   left: 0;
   max-height: 300px;
   overflow: hidden;
+}
+
+/* SECTION 04 */
+
+.fourth_section {
+  padding-top: 150px;
+}
+
+.fourth_section main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 150px;
+  position: relative;
+}
+
+.fourth_section main::after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  background-color: var(--light-gray);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.fourth_section .card {
+  text-decoration: none;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fourth_section .card:nth-child(even) {
+  grid-column-end: end;
+}
+
+.fourth_section .card h3, .fourth_section .card p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.fourth_section p {
+  font-weight: 600;
+  color: var(--light-gray);
+}
+
+.fourth_section span {
+  color: var(--strong-text-color);
+}
+
+.fourth_section .gallery {
+  width: 100%;
+}
+
+/* SECTION 05 */
+
+.fifth_section {
+  padding-block: 150px;
 }
