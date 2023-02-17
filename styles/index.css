@@ -39,6 +39,11 @@ strong {
   color: var(--strong-text-color);
 }
 
+h1 {
+  font-size: 3.125rem;
+  line-height: 3.75rem;
+}
+
 /* HEADER */
 header {
   display: flex;
@@ -47,8 +52,8 @@ header {
   padding: 1rem;
 }
 
-.logo {
-  font-size: 1.25rem;
+.logo h1 {
+  font-size: 2.5rem;
 }
 
 header ul {
@@ -76,3 +81,49 @@ header button {
 
   cursor: pointer;
 }
+
+/* SECTION 01 */
+.first_section {
+  display: flex;
+  align-items: center;
+}
+
+.first_section article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.first_section aside {
+  display: flex;
+  gap: .5rem;
+}
+
+section .selected_artists {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.selected_artists p {
+  margin: 0;
+  line-height: 2.5rem;
+}
+
+/* SECTION 02 - GALLERY */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+
+  margin-top: 6.25rem;
+}
+
+.gallery img {
+  max-width: 280px;
+}
+
+/* SECTION 03 */
+
