@@ -335,3 +335,136 @@ section .selected_artists {
 footer {
   background-color: var(--secondary-bg-color);
 }
+
+footer section {
+  background-color: transparent;
+}
+
+footer .footer_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 60px;
+}
+
+.footer_header a {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--strong-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s;
+}
+
+.footer_header a:hover {
+  transform: rotate(360deg);
+  border-radius: 50px;
+}
+
+footer .footer_main {
+  border-block: var(--light-gray) 1px solid;
+  
+}
+footer main {
+  display: flex;
+  align-items: center;
+}
+
+.footer_main .contact, .footer_main .links {
+  padding-block: 70px;
+}
+
+.footer_main .contact {
+  padding-right: 60px;
+}
+
+.footer_main form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer_main label {
+  font-size: 1.875rem;
+  line-height: 38px;
+  max-width: 350px;
+}
+
+.footer_main form .wrapper {
+  display: flex;
+}
+
+.footer_main form .email_wrapper {
+  padding: 20px;
+  background-color: var(--main-bg-color);
+}
+
+.footer_main input[type='email'] {
+  background-color: transparent;
+  border: none;
+  width: 280px;
+  font-size: 1.25rem;
+}
+
+.footer_main form button{
+  padding: 1rem 2rem;
+  font-family: var(--font-family);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.footer_main .links {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-evenly;
+  border-left: var(--light-gray) 1px solid;
+}
+
+.footer_main .links li {
+  margin-top: 15px;
+}
+
+.footer_main .links a{
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--light-gray);
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 4rem;
+}
+
+.footer_bottom a {
+  text-decoration: none;
+  color: var(--light-gray);
+}
+.footer_bottom a:hover {
+  color: var(--strong-text-color);
+}
+
+.footer_bottom .social_media {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.social_media a {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3.125rem;
+
+  border: transparent 2px solid;
+  border-radius: 50px;
+  transition: .3s;
+}
+
+.social_media a:hover {
+  border: var(--strong-text-color) 2px solid;
+}
