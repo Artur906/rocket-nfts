@@ -7,4 +7,5 @@ Da uma olhada em como ficou!! 👀 <br>
 
 Proximos passos? 
 - [ ] reponsividade 
-- [ ] animações
+- [x] animações (animação 3d ;-;)
+- [ ] badge deve seguir o mouse

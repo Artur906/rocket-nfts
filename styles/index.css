@@ -158,6 +158,64 @@ section .selected_artists {
   line-height: 2.5rem;
 }
 
+@keyframes badge-3d-animation {
+  0% {
+    transform: perspective(5000px) rotateX(20deg) rotateY(20deg);
+  } 
+
+  50% {
+    transform: perspective(5000px) rotateX(-30deg) rotateY(-20deg);
+  }
+
+  100% {
+    transform: perspective(5000px) rotateX(20deg) rotateY(20deg);
+  } 
+}
+
+.badge {
+  width: fit-content;
+  height: fit-content;
+  
+  transform-style: preserve-3d;
+  transform: perspective(5000px) rotateX(20deg) rotateY(20deg);
+  position: relative;
+
+  animation: badge-3d-animation 5s infinite;
+}
+
+.badge::after {
+  content: '';
+  width: 105%;
+  height: 105%;
+  border-radius: 50%;
+  
+  position: absolute;
+  inset: -1rem;
+  margin: auto;
+  
+  z-index: -2;
+  transform: translateZ(-25px);
+
+  background-color: var(--contrast-color);
+}
+
+@keyframes badge-img-rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.badge img {
+  animation: badge-img-rotate 15s infinite;
+}
+
+
 /* SECTION 02 - GALLERY */
 .gallery {
   background-color: transparent;
@@ -281,6 +339,7 @@ section .selected_artists {
 
 .fourth_section span {
   color: var(--contrast-color);
+  font-weight: 400;
 }
 
 .fourth_section .gallery {
