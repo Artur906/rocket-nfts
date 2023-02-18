@@ -6,7 +6,7 @@
   --secondary-bg-color: #252525;
   --light-gray: #5A5757;
   --main-text-color: #FFFFFF;
-  --strong-text-color: #FF5B50;
+  --contrast-color: #FF5B50;
   
   --font-family: 'Montserrat', sans-serif;
 }
@@ -33,6 +33,10 @@ body {
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 section {
   background-color: var(--main-bg-color);
 }
@@ -54,7 +58,7 @@ p {
 
 a[target='_blank'] {
   text-decoration: underline;
-  color: var(--strong-text-color);
+  color: var(--contrast-color);
 }
 
 a {
@@ -63,10 +67,25 @@ a {
 }
 
 strong {
-  color: var(--strong-text-color);
+  color: var(--contrast-color);
 }
 
+/* CUSTOM SCROLLBAR */
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--contrast-color);
+}
 
 /* HEADER */
 header.container {
@@ -92,7 +111,7 @@ header li a {
 }
 
 header a:hover {
-  color: var(--strong-text-color);
+  color: var(--contrast-color);
 }
 
 header button {
@@ -261,7 +280,7 @@ section .selected_artists {
 }
 
 .fourth_section span {
-  color: var(--strong-text-color);
+  color: var(--contrast-color);
 }
 
 .fourth_section .gallery {
@@ -301,11 +320,11 @@ section .selected_artists {
 }
 
 .artist_card span {
-  color: var(--strong-text-color);
+  color: var(--contrast-color);
 }
 
 .artist_card:hover {
-  background-color: var(--strong-text-color);
+  background-color: var(--contrast-color);
   color: var(--main-text-color);
   text-shadow: 0 0 50px black;
 }
@@ -328,7 +347,7 @@ section .selected_artists {
 }
 
 .fifth_section article a:hover {
-  color: var(--strong-text-color);
+  color: var(--contrast-color);
 }
 
 /* FOOTER */
@@ -350,7 +369,7 @@ footer .footer_header {
 .footer_header a {
   width: 5rem;
   height: 5rem;
-  background-color: var(--strong-text-color);
+  background-color: var(--contrast-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -433,6 +452,10 @@ footer main {
   color: var(--light-gray);
 }
 
+.footer_main .links a:hover {
+  color: var(--contrast-color);
+}
+
 .footer_bottom {
   display: flex;
   justify-content: space-between;
@@ -445,7 +468,7 @@ footer main {
   color: var(--light-gray);
 }
 .footer_bottom a:hover {
-  color: var(--strong-text-color);
+  color: var(--contrast-color);
 }
 
 .footer_bottom .social_media {
@@ -468,5 +491,5 @@ footer main {
 }
 
 .social_media a:hover {
-  border: var(--strong-text-color) 2px solid;
+  border: var(--contrast-color) 2px solid;
 }
