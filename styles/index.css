@@ -9,6 +9,11 @@
   --contrast-color: #FF5B50;
   
   --font-family: 'Montserrat', sans-serif;
+  --default-font-size: 1.125rem;
+  --xl-font-size: 3.125rem;
+  --lg-font-size: 2.5rem;
+  --md-font-size: 1.875rem;
+  --sm-font-size: 1.25rem;
 }
 
 body {
@@ -29,7 +34,7 @@ body {
     top center
   ;
   background-size: cover; 
-  font-size: 1.125rem;
+  font-size: var(--default-font-size);
   scroll-behavior: smooth;
 }
 
@@ -48,7 +53,7 @@ section {
 }
 
 h1 {
-  font-size: 3.125rem;
+  font-size: var(--xl-font-size);
   line-height: 3.75rem;
 }
 
@@ -92,11 +97,22 @@ header.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
+  padding-block: 25px;
+}
+
+.logo {
+  flex: 1;
 }
 
 .logo h1 {
-  font-size: 2.5rem;
+  font-size: var(--lg-font-size);
+}
+
+header .nav_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2;
 }
 
 header ul {
@@ -126,6 +142,53 @@ header button {
   cursor: pointer;
 }
 
+#toggle_menu {
+  display: none;
+  background-color: transparent;
+  border: none;
+}
+
+header #toggle_menu {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+
+  transition: all .2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+#toggle_menu::after, #toggle_menu::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--contrast-color);
+
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#toggle_menu::after {
+  top: 0;
+  left: 0;
+}
+
+#toggle_menu::before {
+  bottom: 0;
+  width: 50%;
+  right: 0;
+}
+
+#toggle_menu.active::before {
+  width: 100%;
+  top: 0;
+  transform: rotate(45deg);
+}
+
+#toggle_menu.active::after {
+  transform: rotate(-45deg);
+}
+
+
 /* SECTION 01 */
 .first_section {
   background-color: transparent;
@@ -153,9 +216,12 @@ section .selected_artists {
   justify-content: end;
 }
 
+.selected_artists span {
+  line-height: 1.25rem;
+}
 .selected_artists p {
   margin: 0;
-  line-height: 2.5rem;
+  line-height: 1.25rem;
 }
 
 @keyframes badge-3d-animation {
@@ -257,7 +323,7 @@ section .selected_artists {
 .third_section span {
   font-weight: 600;
   color: var(--light-gray);
-  font-size: 1.25rem;
+  font-size: var(--span-font-size);
 }
 
 .third_section main {
@@ -358,6 +424,7 @@ section .selected_artists {
   display: flex;
   gap: 70px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .best_artists .artist_card {
@@ -464,7 +531,7 @@ footer main {
 }
 
 .footer_main label {
-  font-size: 1.875rem;
+  font-size: var(--md-font-size);
   line-height: 38px;
   max-width: 350px;
 }
@@ -481,8 +548,8 @@ footer main {
 .footer_main input[type='email'] {
   background-color: transparent;
   border: none;
-  width: 280px;
-  font-size: 1.25rem;
+  max-width: 280px;
+  font-size: var(--sm-font-size);
   color: var(--main-text-color);
   outline: none;
 }
@@ -490,7 +557,7 @@ footer main {
 .footer_main form button{
   padding: 1rem 2rem;
   font-family: var(--font-family);
-  font-size: 1.25rem;
+  font-size: var(--sm-font-size);
   font-weight: 700;
 }
 
@@ -534,6 +601,7 @@ footer main {
   padding: 1rem;
   display: flex;
   align-items: center;
+  gap: 3.125rem;
 }
 
 .social_media a {
@@ -542,7 +610,7 @@ footer main {
   height: 50px;
   align-items: center;
   justify-content: center;
-  margin-left: 3.125rem;
+  
 
   border: transparent 2px solid;
   border-radius: 50px;
@@ -551,4 +619,182 @@ footer main {
 
 .social_media a:hover {
   border: var(--contrast-color) 2px solid;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 500px) {
+  :root {
+    --default-font-size: 1.125rem;
+    --xl-font-size: 2.5rem;
+    --lg-font-size: 1.875rem;
+    --md-font-size: 1.875rem;
+    --sm-font-size: 1.25rem;
+  }
+
+  .container {
+    padding-inline: 25px;
+  }
+
+  /* HEADER */
+  .logo h1 {
+    line-height: 2rem;
+  }
+
+  /* SECTION 01 */
+
+  .first_section {
+    text-align: center;
+  }
+
+  .first_section article {
+    margin: 0;
+  }
+  .selected_artists {
+    text-align: start;
+  }
+
+
+  .third_section main img {
+    left: -20rem;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+
+  .fourth_section {
+    text-align: center;
+  }
+
+  .fourth_section main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .fourth_section main a {
+    margin: auto;
+  }
+
+  .fourth_section main::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 15;
+
+    background-color: var(--main-bg-color);
+    transition: all .2s;
+    border-bottom: var(--light-gray) 1px solid;
+  }
+
+  header .logo {
+    z-index: 10;
+  }
+
+  header .nav_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    
+    position: absolute;
+    top: -1000px;
+    left: 0;
+
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: var(--main-bg-color);
+
+    transition: all .2s;
+  }
+
+  .nav_buttons nav ul {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .nav_buttons.active{
+    top: 0;
+  }
+
+  header #toggle_menu {
+    display: block;
+  }
+
+  .first_section {
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding-top: 50px;
+  }
+
+  /* SECTION 3 */
+  .third_section article {
+    flex-direction: column;
+  }
+
+  .third_section aside {
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+
+    padding-inline: 0;
+    padding-block: 70px;
+    border-right: 0;
+  }
+
+  .third_section main article {
+    padding: 0;
+    gap: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .third_section main .content a:not(a[target='_blank']) {
+    margin-top: 32px;
+  }
+
+  .third_section main img {
+    left: -13rem; 
+  }
+
+  .footer_main main{
+    flex-direction: column;
+  }
+
+  .footer_main .contact {
+    padding-right: 0;
+    margin: auto;
+    width: 100%;
+  }
+
+  .footer_main form .wrapper {
+    flex-direction: column;
+  }
+
+  .footer_main .links {
+    width: 100%;
+    border-left: none;
+    border-top: var(--light-gray) 1px solid;
+  }
+
+  .footer_main label {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .footer_bottom {
+    flex-direction: column;
+  }
+
+  .footer_bottom .social_media {
+    gap: 1rem;
+  }
+  
 }
