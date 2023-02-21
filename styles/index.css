@@ -226,6 +226,9 @@ section .selected_artists {
 
 @keyframes badge-3d-animation {
   0% {
+    transform: perspective(5000px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
     transform: perspective(5000px) rotateX(20deg) rotateY(20deg);
   } 
 
@@ -233,20 +236,24 @@ section .selected_artists {
     transform: perspective(5000px) rotateX(-30deg) rotateY(-20deg);
   }
 
-  100% {
+  75% {
     transform: perspective(5000px) rotateX(20deg) rotateY(20deg);
+  } 
+  100% {
+    transform: perspective(5000px) rotateX(0deg) rotateY(0deg);
   } 
 }
 
 .badge {
+  --x-rotation: 0deg; 
+  --y-rotation: 0deg;
   width: fit-content;
   height: fit-content;
   
   transform-style: preserve-3d;
-  transform: perspective(5000px) rotateX(20deg) rotateY(20deg);
+  transition: all 1s ease-out;
+  transform: perspective(5000px) rotateX(var(--x-rotation)) rotateY(var(--y-rotation));
   position: relative;
-
-  animation: badge-3d-animation 5s infinite;
 }
 
 .badge::after {
@@ -278,7 +285,7 @@ section .selected_artists {
 }
 
 .badge img {
-  animation: badge-img-rotate 15s infinite;
+  animation: badge-img-rotate 15s ease-in-out infinite;
 }
 
 
@@ -548,7 +555,8 @@ footer main {
 .footer_main input[type='email'] {
   background-color: transparent;
   border: none;
-  max-width: 280px;
+  padding: 20px;
+  background-color: var(--main-bg-color);
   font-size: var(--sm-font-size);
   color: var(--main-text-color);
   outline: none;
@@ -622,6 +630,15 @@ footer main {
 }
 
 /* RESPONSIVE */
+@media (any-pointer: coarse) {
+  .badge {
+    --x-rotation: 20deg; 
+    --y-rotation: 20deg;
+    transform: perspective(5000px) rotateX(var(--x-rotation)) rotateY(var(--y-rotation));
+    animation: badge-3d-animation 10s 3s ease-in-out infinite;
+  }
+}
+
 @media screen and (max-width: 500px) {
   :root {
     --default-font-size: 1.125rem;
@@ -652,7 +669,6 @@ footer main {
   .selected_artists {
     text-align: start;
   }
-
 
   .third_section main img {
     left: -20rem;
